@@ -1,0 +1,24 @@
+[package]
+name = "test"
+version = "0.1.0"
+authors = ["nebelgrau"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cortex-m = "0.6.1"
+cortex-m-rt = "0.6.10"
+panic-halt = "0.2.0"
+ssd1306 = {version ="0.3.0-alpha.4", features=["graphics"]}
+embedded-graphics = "0.6.0-alpha.3"
+stm32f0xx-hal = {version = "0.15.2", features = ["stm32f030xc"]}
+
+[dependencies.arrayvec]
+version = "0.5.1"
+default-features = false
+
+[profile.release]
+debug = true
+lto = true
+opt-level = "z"
